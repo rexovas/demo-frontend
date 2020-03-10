@@ -3,7 +3,7 @@
 }
 
 .Crossix-logo {
-  height: 5vmin;
+  height: 7vmin;
   pointer-events: none;
 }
 
@@ -13,23 +13,36 @@
   }
 } */
 
-.App-header {
-  /* background-color: #282c34; */
-  padding-left: 200px;
-  padding-top: 50px;
-  background-color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 767px), screen and (max-width: 812px) and (orienation: landscape) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+  /* background-color: #282c34; */
+  /* padding-left: 200px; */
+  /* padding-top: 50px; */
+  /* min-height: 100vh; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
 }
+
+/* .App-link {
+  color: #61dafb;
+} */
 
 /* @keyframes App-logo-spin {
   from {
