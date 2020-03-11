@@ -11,9 +11,7 @@ export default class DataApi {
   };
 
   getTableData = async () => {
-    console.log("TEST")
     const data = await this.requestService.makeRequest('/table-data');
-    console.log(data);
     return data;
   }
 }

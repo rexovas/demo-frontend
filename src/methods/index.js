@@ -1,6 +1,6 @@
 import DataApi from './DataApi';
-import tableRows from './tableRows';
+import { tableRows, tableColumns } from './tableItems';
 
 const dataApi = new DataApi();
 
-export { dataApi, tableRows };
+export { dataApi, tableRows, tableColumns };

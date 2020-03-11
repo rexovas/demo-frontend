@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import '@shopify/polaris/styles.css';
-import { DataTable } from '@shopify/polaris';
-import { dataApi, tableRows } from '../methods';
+// import '@shopify/polaris/styles.css';
+import DataTable from 'react-data-table-component';
+// import { DataTable } from '@shopify/polaris';
+import { dataApi, tableRows, tableColumns } from '../methods';
 // import data from '../assets/data.json';
 
 class Table extends Component {
@@ -9,77 +10,86 @@ class Table extends Component {
     super(props);
     this.state = {
       loading: true,
+      data: null,
     };
   }
 
   componentDidMount = async () => {
-    const url = 'http://10.0.1.86:5000/table-data';
-    try {
-      const response = await dataApi.getTableData();
-      console.log('RESPONSE', response);
-      // const data = await response.json();
-      // console.log(data);
-    } catch (e) {
-      console.log(e);
-    }
-    // console.log(data);
+    const data = await dataApi.getTableData();
+    this.setState({ data, loading: false });
   }
 
-  getTableData = async (e) => {
-    console.log(e);
-    try {
-      await dataApi.getTableData();
-    } catch (error) {
-      this.setState({ errorMessage: JSON.stringify(error) });
-    }
-  }
+  // getTableData = async (e) => {
+  //   console.log(e);
+  //   try {
+  //     await dataApi.getTableData();
+  //   } catch (error) {
+  //     this.setState({ errorMessage: JSON.stringify(error) });
+  //   data}
+  // }
 
   render() {
-    const rows = [
-      ['Emerald Silk Gown', '$875.00', 124689, 140, '$122,500.00'],
-      ['Mauve Cashmere Scarf', '$230.00', 124533, 83, '$19,090.00'],
-      [
-        'Navy Merino Wool Blazer with khaki chinos and yellow belt',
-        '$445.00',
-        124518,
-        32,
-        '$14,240.00',
-      ],
-    ];
+    const { loading, data } = this.state;
 
-    // const rows = tableRows(data);
+    // console.log(data);
+    // console.log(data ? data.data : null);
 
-    const { loading } = this.state;
+    const rows = tableRows(data || null);
+    const columns = tableColumns(data ? data.columns : null);
+
+    // const columns = [
+    //   {
+    //     name: 'Title',
+    //     selector: 'title',
+    //     sortable: true,
+    //   },
+    //   {
+    //     name: 'Year',
+    //     selector: 'year',
+    //     sortable: true,
+    //     right: true,
+    //   },
+    // ];
 
     return (
       <div>
-        {loading ? <div>loading...</div> : <div>...test...</div>}
-        <DataTable
-          showTotalsInFooter
-          columnContentTypes={[
-            'text',
-            'numeric',
-            'numeric',
-            'numeric',
-            'numeric',
-          ]}
-          headings={[
-            'Product',
-            'Price',
-            'SKU Number',
-            'Net quantity',
-            'Net sales',
-          ]}
-        // rows={rows}
-          rows={rows}
-          totals={['', '', '', 255, '$155,830.00']}
-          totalsName={{
-            singular: 'Total net sales',
-            plural: 'Total net sales',
-          }}
-        />
+        {loading ? <div>loading...</div>
+          : (
+            <DataTable
+              highlightOnHover
+              pagination
+            // title="Data"
+              columns={columns}
+              data={rows}
+              sortable
+            />
+          )}
       </div>
     );
+
+
+    //         <DataTable
+    //           // showTotalsInFooter
+    //           columnContentTypes={[
+    //             'numeric',
+    //             'text',
+    //             'text',
+    //             'text',
+    //             'numeric',
+    //             'numeric',
+    //           ]}
+    //           headings={data.columns}
+    //     // rows={rows}
+    //           rows={data.data}
+    //           // totals={['', '', '', 255, '$155,830.00']}
+    //           // totalsName={{
+    //             // singular: 'Total net sales',
+    //             // plural: 'Total net sales',
+    //           // }}
+    //         />
+    //       )}
+    //   </div>
+    // );
   }
 }
 

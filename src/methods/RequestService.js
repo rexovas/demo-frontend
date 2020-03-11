@@ -31,9 +31,6 @@ class RequestService {
   async makeRequest(path, options) {
     const requestParams = { ...this.defaultOptions, ...options };
 
-    console.log(this.baseUrl)
-    console.log(requestParams);
-
     try {
       const result = await fetch(`${this.baseUrl}${path}`, requestParams);
 
