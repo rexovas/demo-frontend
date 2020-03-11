@@ -2,22 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import AOS from 'aos';
-import { AppProvider } from '@shopify/polaris';
-import enTranslations from '@shopify/polaris/locales/en.json';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'aos/dist/aos.css';
-// import '@shopify/polaris/styles.css';
 
 AOS.init();
-
-function WrappedApp() {
-  return (
-    <AppProvider>
-      <App i18n={enTranslations} />
-    </AppProvider>
-  );
-}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

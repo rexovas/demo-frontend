@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-// import '@shopify/polaris/styles.css';
 import DataTable from 'react-data-table-component';
-// import { DataTable } from '@shopify/polaris';
 import { dataApi, tableRows, tableColumns } from '../methods';
-// import data from '../assets/data.json';
 
 class Table extends Component {
   constructor(props) {
@@ -31,25 +28,8 @@ class Table extends Component {
   render() {
     const { loading, data } = this.state;
 
-    // console.log(data);
-    // console.log(data ? data.data : null);
-
     const rows = tableRows(data || null);
     const columns = tableColumns(data ? data.columns : null);
-
-    // const columns = [
-    //   {
-    //     name: 'Title',
-    //     selector: 'title',
-    //     sortable: true,
-    //   },
-    //   {
-    //     name: 'Year',
-    //     selector: 'year',
-    //     sortable: true,
-    //     right: true,
-    //   },
-    // ];
 
     return (
       <div>
@@ -67,30 +47,6 @@ class Table extends Component {
           )}
       </div>
     );
-
-
-    //         <DataTable
-    //           // showTotalsInFooter
-    //           columnContentTypes={[
-    //             'numeric',
-    //             'text',
-    //             'text',
-    //             'text',
-    //             'numeric',
-    //             'numeric',
-    //           ]}
-    //           headings={data.columns}
-    //     // rows={rows}
-    //           rows={data.data}
-    //           // totals={['', '', '', 255, '$155,830.00']}
-    //           // totalsName={{
-    //             // singular: 'Total net sales',
-    //             // plural: 'Total net sales',
-    //           // }}
-    //         />
-    //       )}
-    //   </div>
-    // );
   }
 }
 
