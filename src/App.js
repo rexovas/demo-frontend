@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './css/App.css';
-import { Header, Table } from './components';
+import { Header, Table, SearchBox } from './components';
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
               <div className="section__head">
                 <h3>Age-Adjusted Death Rates for the Top 10 Leading Causes of Death in the US</h3>
               </div>
-              {/* <div className="section__body">
-                test4
-              </div> */}
+              <div className="section__body">
+                <SearchBox />
+              </div>
             </div>
             test2
           </section>
