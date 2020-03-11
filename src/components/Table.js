@@ -18,7 +18,7 @@ class Table extends Component {
       const response = await dataApi.getTableData();
       console.log('RESPONSE', response);
       // const data = await response.json();
-      console.log(data);
+      // console.log(data);
     } catch (e) {
       console.log(e);
     }
