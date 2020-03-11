@@ -57,6 +57,7 @@ class Table extends Component {
           : (
             <DataTable
               highlightOnHover
+              paginationPerPage={15}
               pagination
             // title="Data"
               columns={columns}
