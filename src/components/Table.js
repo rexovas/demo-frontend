@@ -39,6 +39,7 @@ class Table extends Component {
               highlightOnHover
               paginationPerPage={15}
               pagination
+              fixedHeader
             // title="Data"
               columns={columns}
               data={rows}
