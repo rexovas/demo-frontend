@@ -1,10 +1,10 @@
-import apiConfig from '../utilities/apiConfig.json';
+import { Errors, apiConfig } from '../utilities';
 
-// const {
-//   NOT_FOUND, GENERIC_ERROR, BAD_REQUEST, UNAUTHORIZED_ERROR,
-// } = Errors;
+const {
+  NOT_FOUND, GENERIC_ERROR, BAD_REQUEST, UNAUTHORIZED_ERROR,
+} = Errors;
 
-class EternalApi {
+class RequestService {
   constructor() {
     this.baseUrl = apiConfig;
     this.defaultOptions = {
@@ -31,6 +31,9 @@ class EternalApi {
   async makeRequest(path, options) {
     const requestParams = { ...this.defaultOptions, ...options };
 
+    console.log(this.baseUrl)
+    console.log(requestParams);
+
     try {
       const result = await fetch(`${this.baseUrl}${path}`, requestParams);
 
@@ -51,4 +54,4 @@ class EternalApi {
   }
 }
 
-export default EternalApi;
+export default RequestService;
