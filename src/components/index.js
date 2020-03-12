@@ -1,5 +1,8 @@
 import Header from './Header';
+import ImageSection from './ImageSection';
+import InteractiveTable from './InteractiveTable';
 import Table from './Table';
-import SearchBox from './SearchBox';
 
-export { Header, Table, SearchBox };
+export {
+  Header, ImageSection, InteractiveTable, Table,
+};

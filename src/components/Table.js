@@ -17,15 +17,6 @@ class Table extends Component {
     this.setState({ data, loading: false });
   }
 
-  // getTableData = async (e) => {
-  //   console.log(e);
-  //   try {
-  //     await dataApi.getTableData();
-  //   } catch (error) {
-  //     this.setState({ errorMessage: JSON.stringify(error) });
-  //   data}
-  // }
-
   render() {
     const { loading, data } = this.state;
 

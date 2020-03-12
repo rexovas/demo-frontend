@@ -1,0 +1,39 @@
+.section-slider {
+  /* autoprefixer: off */
+  min-height: 473px;
+  margin-top: 77px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 6px 6px rgba(0,0,0,.16);
+  box-shadow: 0 6px 6px rgba(0,0,0,.16);
+}
+
+@media (max-width: 1200px) {
+  .section-slider {
+    margin-top: 71px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .section-slider {
+    margin-top: 66px;
+  }
+}
+
+.slider-image {
+  background-image: url("https://crossix.com/wp-content/uploads/cache/2019/03/difa-laptop_1920x517_2-1920x517-cropped.jpg");
+  color: rgb(0, 61, 113);
+  width: 100%; 
+  transition-duration: 0ms; 
+  /* opacity: 0;  */
+  transform: translate3d(0px, 0px, 0px);
+  background-size: cover;
+  background-position: 50%;
+}
+
+@media (max-width: 1023px) {
+  .slider-image {
+    background-position: 70%;
+  }
+}

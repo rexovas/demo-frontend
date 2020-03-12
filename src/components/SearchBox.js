@@ -8,18 +8,21 @@ import { dataApi } from '../methods';
 
 const useAsyncHook = (column, searchStr = '') => {
   const [result, setResult] = useState([]);
+  const [placeholder, setPlaceholder] = useState('');
 
 
   useEffect(() => {
     async function fetchSearchList() {
       const data = await dataApi.getFilterList(column, searchStr);
       setResult(data.result);
+      // console.log(data.result[2].label)
+      setPlaceholder(data.result[2].label)
     }
 
     fetchSearchList();
   }, [searchStr]);
 
-  return [result];
+  return [result, placeholder];
 };
 
 const SearchBox = (props) => {
@@ -35,7 +38,7 @@ const SearchBox = (props) => {
 
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [options] = useAsyncHook(column, inputValue);
+  const [options, placeholder] = useAsyncHook(column, inputValue);
 
   const updateText = useCallback(
     (value) => {
@@ -67,7 +70,7 @@ const SearchBox = (props) => {
       onChange={updateText}
       label={`Filter by ${titleCase(column)}`}
       value={inputValue}
-      placeholder="e.g. New York"
+      placeholder={`e.g. ${placeholder}`}
     />
   );
 
