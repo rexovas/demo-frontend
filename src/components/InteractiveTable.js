@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/components/InteractiveTable.css';
 import SearchBox from './SearchBox';
-// import Table from './Table';
 
 const InteractiveTable = () => (
   <div>
@@ -15,15 +14,8 @@ const InteractiveTable = () => (
           <SearchBox column="state" />
           {/* <SearchBox column="cause-name" /> */}
         </div>
-        {/* <div className="section__body">
-                <SearchBox column="state" />
-                <SearchBox column="cause-name" />
-              </div> */}
       </div>
     </section>
-    {/* <div data-aos="fade-right">
-      <Table />
-    </div> */}
   </div>
 );
 

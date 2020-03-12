@@ -33,15 +33,6 @@ const useAsyncHook = (searchStr = '') => {
 };
 
 const SearchBox = () => {
-  // const { column } = props;
-
-  // function titleCase(string) {
-  //   return string
-  //     .toLowerCase()
-  //     .split('-')
-  //     .map((word) => word.replace(word[0], word[0].toUpperCase()))
-  //     .join(' ');
-  // }
 
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [inputValue, setInputValue] = useState('');

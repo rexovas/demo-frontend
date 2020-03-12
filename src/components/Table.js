@@ -25,7 +25,6 @@ class Table extends Component {
     const { filterParams: prevFilterParams } = prevProps;
     const { filterParams } = this.props;
     if (filterParams !== prevFilterParams) {
-      // this.setState({ loading: true });
       this.updateStateItem('loading', true);
       const data = await dataApi.getFilteredTableData(filterParams);
       this.updateStateItem('data', data);

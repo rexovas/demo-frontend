@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './css/App.css';
 import {
   Header, ImageSection, InteractiveTable,
@@ -13,9 +12,6 @@ function App() {
         <div className="container">
           <ImageSection />
           <InteractiveTable />
-          {/* <div data-aos="fade-right">
-            <Table />
-          </div> */}
         </div>
       </div>
     </div>
