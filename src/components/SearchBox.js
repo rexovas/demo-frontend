@@ -33,7 +33,6 @@ const useAsyncHook = (searchStr = '') => {
 };
 
 const SearchBox = () => {
-
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [options, placeholder] = useAsyncHook(inputValue);
@@ -42,7 +41,7 @@ const SearchBox = () => {
     (value) => {
       setInputValue(value);
     },
-    options,
+    [options], // eslint-disable-line
   );
 
   const removeTag = useCallback(
