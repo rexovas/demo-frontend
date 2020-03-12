@@ -2,7 +2,9 @@
 # Crossix Assignment Front-End
 ## Author: David Lovas
 
-This project is a basic React web application enabling users to interact with a data table provided by the 
+This project is a basic React web application enabling users to interact with data provided by the National Center for Health Statistics concerning death rates for the top 10 causes of death in the United States.
+
+This project requires a backend API service to be running simultaneosly and accessible on localhost:5000 
 
 ## Running the  app
 
@@ -31,7 +33,6 @@ If you have trouble running the application, it may be due to conflicts caused b
 `There might be a problem with the project dependency tree.
 It is ikely not a bug in Create React App, but something you need to fix locally.`
 
-To fix this issue, you can either remove any of the dev dependencies with
+To fix this issue you can either create a file called `.env` in the project root directory and add the line `SKIP_PREFLIGHT_CHECK=true`
+or remove the dev dependencies with
 `yarn remove <package>` or `npm uninstall <package>` followed by deleting the files `yarn.lock` and `package.lock` if they exist
-
-Alternatively, you can create a file called `.env` in the project root directory and add the line `SKIP_PREFLIGHT_CHECK=true`
