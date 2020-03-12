@@ -26,7 +26,7 @@ class Table extends Component {
     const { filterParams } = this.props;
     if (filterParams !== prevFilterParams) {
       this.updateStateItem('loading', true);
-      const data = await dataApi.getFilteredTableData(filterParams);
+      const data = await dataApi.getTableData(filterParams);
       this.updateStateItem('data', data);
       this.updateStateItem('loading', false);
     }
@@ -34,9 +34,6 @@ class Table extends Component {
 
   render() {
     const { loading, data } = this.state;
-    // const { filterParams } = this.props;
-    // console.log(this.state);
-    // console.log(filterParams);
 
     const rows = tableRows(data || null);
     const columns = tableColumns(data ? data.columns : null);
@@ -47,7 +44,7 @@ class Table extends Component {
           <DataTable
             className="table"
             highlightOnHover
-            paginationPerPage="15"
+            paginationPerPage={15}
             pagination
             sortable
           />
@@ -56,7 +53,7 @@ class Table extends Component {
             <DataTable
               className="table"
               highlightOnHover
-              paginationPerPage="15"
+              paginationPerPage={15}
               pagination
               columns={columns}
               data={rows}
