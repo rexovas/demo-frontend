@@ -72,7 +72,7 @@ const SearchBox = (props) => {
   );
 
   return (
-    <div style={{ height: '325px' }}>
+    <div>
       <TextContainer>
         <Stack>{tagsMarkup}</Stack>
       </TextContainer>

@@ -172,8 +172,25 @@
   }
 }
 
+.slider-image {
+  background-image: url("https://crossix.com/wp-content/uploads/cache/2019/03/difa-laptop_1920x517_2-1920x517-cropped.jpg");
+  color: rgb(0, 61, 113);
+  width: 100%; 
+  transition-duration: 0ms; 
+  /* opacity: 0;  */
+  transform: translate3d(0px, 0px, 0px);
+  background-size: cover;
+  background-position: 50%;
+}
+
+@media (max-width: 1023px) {
+  .slider-image {
+    background-position: 70%;
+  }
+}
+
 .section-partners {
-  margin-top: 77px;
+  /* margin-top: 77px; */
   padding-top: 46px;
   padding-bottom: 66px;
 }

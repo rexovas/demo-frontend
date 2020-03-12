@@ -10,7 +10,7 @@ function App() {
         <Header />
         <div className="container">
           <section className="section-slider" data-aos="fade-right">
-            <div className="slider-intro">
+            <div className="slider-image">
               test
             </div>
           </section>
@@ -19,10 +19,14 @@ function App() {
               <div className="section__head">
                 <h3>Age-Adjusted Death Rates for the Top 10 Leading Causes of Death in the US</h3>
               </div>
-              <div className="section__body">
+              <div className="search-box">
                 <SearchBox column="state" />
                 <SearchBox column="cause-name" />
               </div>
+              {/* <div className="section__body">
+                <SearchBox column="state" />
+                <SearchBox column="cause-name" />
+              </div> */}
             </div>
           </section>
           <div data-aos="fade-right">
