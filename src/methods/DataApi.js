@@ -11,17 +11,22 @@ export default class DataApi {
     this.changeAppState = changeAppState;
   };
 
-  getTableData = async () => {
-    const data = await this.requestService.makeRequest('/table-data');
+  getTableData = async (filterParams) => {
+    console.log('getTableData DataApi.js filterParams', filterParams);
+    const query = filterParams ? `?filter=${filterParams}` : '';
+    const data = await this.requestService.get(`/table-data${query}`);
     return data;
   }
 
-  getFilterList = async (column, str) => {
-    if (str) {
-      const list = await this.requestService.makeRequest(`/filter-list?column=${column}&search=${str}`);
-      return list;
-    }
-    const list = await this.requestService.makeRequest(`/filter-list?column=${column}`);
+  getFilteredTableData = async (filterParams) => {
+    const query = filterParams ? `?filter=${filterParams}` : '';
+    const data = await this.requestService.get(`/filtered-data${query}`);
+    return data;
+  }
+
+  getFilterList = async (str) => {
+    const query = str ? `?search=${str}` : '';
+    const list = await this.requestService.get(`/filter-list${query}`);
     return list;
   }
 }

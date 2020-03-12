@@ -4,7 +4,7 @@ import '../css/components/ImageSection.css';
 const ImageSection = () => (
   <section className="section-slider" data-aos="fade-right">
     <div className="slider-image">
-              test
+             TEMPORARY PLACEHOLDER
     </div>
   </section>
 );

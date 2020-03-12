@@ -12,30 +12,53 @@ class Table extends Component {
     };
   }
 
+  updateStateItem = (stateItem, value) => {
+    this.setState({ [stateItem]: value });
+  }
+
   componentDidMount = async () => {
     const data = await dataApi.getTableData();
     this.setState({ data, loading: false });
   }
 
+  componentDidUpdate = async (prevProps) => {
+    const { filterParams: prevFilterParams } = prevProps;
+    const { filterParams } = this.props;
+    if (filterParams !== prevFilterParams) {
+      // this.setState({ loading: true });
+      this.updateStateItem('loading', true);
+      const data = await dataApi.getFilteredTableData(filterParams);
+      this.updateStateItem('data', data);
+      this.updateStateItem('loading', false);
+    }
+  }
+
   render() {
     const { loading, data } = this.state;
+    // const { filterParams } = this.props;
+    // console.log(this.state);
+    // console.log(filterParams);
 
     const rows = tableRows(data || null);
     const columns = tableColumns(data ? data.columns : null);
 
     return (
       <div>
-        {loading ? <div>loading...</div>
+        {loading ? (
+          <DataTable
+            className="table"
+            highlightOnHover
+            paginationPerPage="15"
+            pagination
+            sortable
+          />
+        )
           : (
             <DataTable
               className="table"
               highlightOnHover
               paginationPerPage="15"
               pagination
-              persistTableHead
-              // fixedHeader
-              // fixedHeaderScrollHeight
-              // title="Age-Adjusted Death Rates for the Top 10 Leading Causes of Death in the US"
               columns={columns}
               data={rows}
               sortable

@@ -1,5 +1,6 @@
 import Errors from './Errors';
 import ApiConfig from './ApiConfig.json';
+import checkCallError from './checkCallError';
 
 const env = () => {
   switch (process.env.REACT_APP_STAGE) {
@@ -14,4 +15,4 @@ const env = () => {
 
 const apiConfig = ApiConfig[env()];
 
-export { Errors, apiConfig };
+export { Errors, apiConfig, checkCallError };

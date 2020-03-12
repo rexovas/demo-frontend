@@ -1,8 +1,4 @@
-import { Errors, apiConfig } from '../utilities';
-
-const {
-  NOT_FOUND, GENERIC_ERROR, BAD_REQUEST, UNAUTHORIZED_ERROR,
-} = Errors;
+import { checkCallError, apiConfig } from '../utilities';
 
 class RequestService {
   constructor() {
@@ -16,40 +12,41 @@ class RequestService {
   }
 
   async get(path) {
-    const options = { method: 'GET' };
-
-    return this.makeRequest(path, options);
-  }
-
-  async post(path, body) {
-    // body must be an object
-    const options = { method: 'POST', body: JSON.stringify(body) };
-
-    return this.makeRequest(path, options);
+    return this.makeRequest(path);
   }
 
   async makeRequest(path, options) {
     const requestParams = { ...this.defaultOptions, ...options };
-    console.log(path, requestParams)
-
-    try {
-      const result = await fetch(`${this.baseUrl}${path}`, requestParams);
-
-      if (result.status === 400) { throw new BAD_REQUEST(); }
-
-      if (result.status === 403) { throw new UNAUTHORIZED_ERROR(); }
-
-      if (result.status === 404) {
-        throw new NOT_FOUND('The requested resource could not be found. Please try again.');
-      }
-
-      if (result.status === 500) { throw new GENERIC_ERROR(); }
-
-      return result.json();
-    } catch (error) {
-      throw error.message || error.userMessage || error.code;
-    }
+    console.log(path, requestParams);
+    const result = await fetch(`${this.baseUrl}${path}`, requestParams);
+    checkCallError(result);
+    return result.json();
   }
 }
 
 export default RequestService;
+
+// const requestOptions = (method, contentType, auth = null) => (
+//   {
+//     method,
+//     headers: {
+//       'Content-Type': contentType,
+//     },
+//   }
+// );
+
+// const makeRequest = async (path, options) => {
+//   const baseUrl = apiConfig;
+//   const call = await fetch(`${baseUrl}${path}`, options);
+//   checkCallError(call);
+//   return call.json();
+// };
+
+// const RequestService = {
+//   get: async (path, auth, contentType = 'application/json') => {
+//     const options = requestOptions('GET', contentType);
+//     return makeRequest(path, options);
+//   },
+// };
+
+// export default RequestService;

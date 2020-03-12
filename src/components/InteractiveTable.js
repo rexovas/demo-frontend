@@ -1,18 +1,19 @@
 import React from 'react';
 import '../css/components/InteractiveTable.css';
 import SearchBox from './SearchBox';
-import Table from './Table';
+// import Table from './Table';
 
 const InteractiveTable = () => (
   <div>
-    <section className="section-title" data-aos="fade-left" id="section-1">
+    {/* <section className="section-title" data-aos="fade-left" id="section-1"> */}
+    <section className="section-title" id="section-1" data-aos="fade-left">
       <div className="shell">
         <div className="section__head">
           <h3>Age-Adjusted Death Rates for the Top 10 Leading Causes of Death in the US</h3>
         </div>
         <div className="search-box">
           <SearchBox column="state" />
-          <SearchBox column="cause-name" />
+          {/* <SearchBox column="cause-name" /> */}
         </div>
         {/* <div className="section__body">
                 <SearchBox column="state" />
@@ -20,9 +21,9 @@ const InteractiveTable = () => (
               </div> */}
       </div>
     </section>
-    <div data-aos="fade-right">
+    {/* <div data-aos="fade-right">
       <Table />
-    </div>
+    </div> */}
   </div>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './css/App.css';
 import {
-  Header, ImageSection, InteractiveTable, Table,
+  Header, ImageSection, InteractiveTable,
 } from './components';
 
 function App() {
