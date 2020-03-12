@@ -61,6 +61,27 @@
   padding: 10px 0 0 12px;
 }
 
+@media (max-width: 850px) {
+     .slider-image, .image-header {
+      background-image: url(https://crossix.com/wp-content/themes/crossix/resources/images/temp/placeholder-bg.png);
+      /* padding: 20px; */
+      /* padding: 20px 0 0 15px; */
+      padding: 20px 0 0 5px;
+      font-size: 33px;
+    }
+    
+    .image-text {
+      margin-right: 0px;
+      padding: 20px 0 0 5px;
+    }
+
+    .image-link {
+      padding: 10px 0 0 0;
+      font-size: 15px;
+      margin-left: 5px
+    }
+}
+
 /* ---- iPhone X ---- */
 
 /* Portrait and Landscape */
