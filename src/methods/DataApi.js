@@ -16,8 +16,12 @@ export default class DataApi {
     return data;
   }
 
-  getFilterList = async (column, str = '') => {
-    const list = await this.requestService.makeRequest(`/filter-list?column=${column}&search=${str}`);
+  getFilterList = async (column, str) => {
+    if (str) {
+      const list = await this.requestService.makeRequest(`/filter-list?column=${column}&search=${str}`);
+      return list;
+    }
+    const list = await this.requestService.makeRequest(`/filter-list?column=${column}`);
     return list;
   }
 }

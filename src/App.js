@@ -9,11 +9,11 @@ function App() {
       <div className="wrapper__inner">
         <Header />
         <div className="container">
-          {/* <section className="section-slider" data-aos="fade-right">
+          <section className="section-slider" data-aos="fade-right">
             <div className="slider-intro">
               test
             </div>
-          </section> */}
+          </section>
           <section className="section-partners" data-aos="fade-left" id="section-1">
             <div className="shell">
               <div className="section__head">
@@ -21,6 +21,7 @@ function App() {
               </div>
               <div className="section__body">
                 <SearchBox column="state" />
+                <SearchBox column="cause-name" />
               </div>
             </div>
           </section>

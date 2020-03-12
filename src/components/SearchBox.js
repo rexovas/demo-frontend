@@ -8,26 +8,18 @@ import { dataApi } from '../methods';
 
 const useAsyncHook = (column, searchStr = '') => {
   const [result, setResult] = useState([]);
-  const [loading, setLoading] = useState('false');
 
 
   useEffect(() => {
     async function fetchSearchList() {
-      try {
-        setLoading('true');
-        const data = await dataApi.getFilterList(column, searchStr);
-        // const json = await response.json();
-        // console.log(json);
-        setResult(data.result);
-      } catch (error) {
-        setLoading('null');
-      }
+      const data = await dataApi.getFilterList(column, searchStr);
+      setResult(data.result);
     }
 
     fetchSearchList();
   }, [searchStr]);
 
-  return [result, loading];
+  return [result];
 };
 
 const SearchBox = (props) => {
@@ -73,7 +65,7 @@ const SearchBox = (props) => {
   const textField = (
     <Autocomplete.TextField
       onChange={updateText}
-      label="Filter by State"
+      label={`Filter by ${titleCase(column)}`}
       value={inputValue}
       placeholder="e.g. New York"
     />
