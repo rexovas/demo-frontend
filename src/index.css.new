@@ -1,0 +1,29 @@
+.html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.body {
+  min-width: 320px;
+  background: white;
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  line-height: 1.36;
+  color: #003d71;
+  font-weight: 300;
+}
+
+@media (max-width: 1440px) {
+  .body {
+    font-size: 16px;
+  }
+}
+
+.body {
+  /* autoprefixer: off */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  text-size-adjust: none;
+}

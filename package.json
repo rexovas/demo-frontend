@@ -1,20 +1,27 @@
 {
   "name": "crossix-frontend",
-  "version": "0.1.0",
+  "version": "0.3.0",
+  "author": "David Lovas",
   "private": true,
   "dependencies": {
+    "@shopify/polaris": "^4.15.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "aos": "^3.0.0-beta.6",
     "react": "^16.13.0",
+    "react-autocomplete": "^1.8.1",
+    "react-data-table-component": "^6.3.1",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint": "eslint --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
