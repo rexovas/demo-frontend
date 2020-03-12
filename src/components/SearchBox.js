@@ -20,7 +20,7 @@ const useAsyncHook = (searchStr = '') => {
       if (data.result && data.result.length > 2) {
         setPlaceholder(data.result[2].label);
       } else if (data.result && data.result.length === 1) {
-        setPlaceholder(data.results[0].label);
+        setPlaceholder(data.result[0].label);
       } else {
         setPlaceholder('New York');
       }

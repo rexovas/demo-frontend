@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/components/InteractiveTable.css';
 import SearchBox from './SearchBox';
-// import Table from './Table';
 
 const InteractiveTable = () => (
   <div>
@@ -11,19 +10,9 @@ const InteractiveTable = () => (
         <div className="section__head">
           <h3>Age-Adjusted Death Rates for the Top 10 Leading Causes of Death in the US</h3>
         </div>
-        <div className="search-box">
-          <SearchBox column="state" />
-          {/* <SearchBox column="cause-name" /> */}
-        </div>
-        {/* <div className="section__body">
-                <SearchBox column="state" />
-                <SearchBox column="cause-name" />
-              </div> */}
+        <SearchBox column="state" />
       </div>
     </section>
-    {/* <div data-aos="fade-right">
-      <Table />
-    </div> */}
   </div>
 );
 
