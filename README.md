@@ -4,7 +4,7 @@
 
 This project is a basic React web application enabling users to interact with data provided by the National Center for Health Statistics concerning death rates for the top 10 causes of death in the United States.
 
-This project requires a backend API service to be running simultaneosly and accessible on localhost:5000 
+This project requires a back-end API service to be running simultaneosly and accessible on localhost:5000 
 
 ## Running the  app
 
