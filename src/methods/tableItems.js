@@ -2,7 +2,6 @@ const tableRows = (data) => {
   if (!data) {
     return null;
   }
-  // console.log(data.index);
   const rows = data.data;
   const { columns } = data;
   const rowObjects = [];

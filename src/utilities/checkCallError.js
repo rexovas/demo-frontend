@@ -1,7 +1,6 @@
 import FailureByDesign from './Errors';
 
 const checkCallError = (call) => {
-  console.log('CALL', call);
   if (!call.ok) {
     let { response } = call;
     let error = {};
