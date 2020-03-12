@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/components/InteractiveTable.css';
 import SearchBox from './SearchBox';
-import TableSection from './TableSection';
+import Table from './Table';
 
 const InteractiveTable = () => (
   <div>
@@ -20,7 +20,9 @@ const InteractiveTable = () => (
               </div> */}
       </div>
     </section>
-    <TableSection />
+    <div data-aos="fade-right">
+      <Table />
+    </div>
   </div>
 );
 
