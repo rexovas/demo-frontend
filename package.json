@@ -1,6 +1,7 @@
 {
   "name": "crossix-frontend",
   "version": "0.2.1",
+  "author": "David Lovas",
   "private": true,
   "dependencies": {
     "@shopify/polaris": "^4.15.2",

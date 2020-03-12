@@ -12,16 +12,8 @@ export default class DataApi {
   };
 
   getTableData = async (filterParams) => {
-    console.log('getTableData DataApi.js filterParams', filterParams);
     const query = (filterParams && filterParams.length !== 0) ? `?filter=${filterParams}` : '';
     const data = await this.requestService.get(`/table-data${query}`);
-    return data;
-  }
-
-  getFilteredTableData = async (filterParams) => {
-    console.log('getFilteredTableData filterParams', filterParams);
-    const query = (filterParams && filterParams.length !== 0) ? `?filter=${filterParams}` : '';
-    const data = await this.requestService.get(`/filter-data${query}`);
     return data;
   }
 

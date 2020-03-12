@@ -1,5 +1,5 @@
 {
   "localhost": "http://localhost:5000",
-  "development": "http://10.0.1.86:5000",
-  "production": "http://10.0.1.86:5000"
+  "development": "http://localhost:5000",
+  "production": "http://localhost:5000"
 }
