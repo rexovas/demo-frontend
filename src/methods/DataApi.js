@@ -4,6 +4,7 @@ export default class DataApi {
   constructor() {
     this.requestService = new RequestService();
     this.changeAppState = () => {};
+    this.search = null;
   }
 
   setChangeAppState = (changeAppState) => {
@@ -13,5 +14,10 @@ export default class DataApi {
   getTableData = async () => {
     const data = await this.requestService.makeRequest('/table-data');
     return data;
+  }
+
+  getFilterList = async (column, str = '') => {
+    const list = await this.requestService.makeRequest(`/filter-list?column=${column}&search=${str}`);
+    return list;
   }
 }

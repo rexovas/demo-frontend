@@ -20,10 +20,9 @@ function App() {
                 <h3>Age-Adjusted Death Rates for the Top 10 Leading Causes of Death in the US</h3>
               </div>
               <div className="section__body">
-                <SearchBox />
+                <SearchBox column="state" />
               </div>
             </div>
-            test2
           </section>
           <div data-aos="fade-right">
             <Table />
