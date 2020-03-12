@@ -42,7 +42,7 @@ const SearchBox = () => {
     (value) => {
       setInputValue(value);
     },
-    [options],
+    options,
   );
 
   const removeTag = useCallback(
