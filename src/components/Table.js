@@ -33,34 +33,21 @@ class Table extends Component {
   }
 
   render() {
-    const { loading, data } = this.state;
+    const { loading, data } = this.state; // eslint-disable-line no-unused-vars
 
-    const rows = tableRows(data || null);
+    const rows = tableRows(data);
     const columns = tableColumns(data ? data.columns : null);
 
     return (
-      <div>
-        {loading ? (
-          <DataTable
-            className="table"
-            highlightOnHover
-            paginationPerPage={15}
-            pagination
-            sortable
-          />
-        )
-          : (
-            <DataTable
-              className="table"
-              highlightOnHover
-              paginationPerPage={15}
-              pagination
-              columns={columns}
-              data={rows}
-              sortable
-            />
-          )}
-      </div>
+      <DataTable
+        className="table"
+        highlightOnHover
+        paginationPerPage={15}
+        pagination
+        columns={columns}
+        data={rows}
+        sortable
+      />
     );
   }
 }

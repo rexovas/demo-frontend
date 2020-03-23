@@ -1,6 +1,6 @@
 const tableRows = (data) => {
   if (!data) {
-    return null;
+    return [];
   }
   const rows = data.data;
   const { columns } = data;
@@ -18,9 +18,13 @@ const tableRows = (data) => {
   return rowObjects;
 };
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 const tableColumns = (columns) => {
   if (!columns) {
-    return null;
+    return [];
   }
   const headers = columns.map((column) => {
     const object = {
@@ -28,10 +32,18 @@ const tableColumns = (columns) => {
       selector: column.toLowerCase(),
       sortable: true,
       wrap: true,
+      format: (row) => {
+        const col = column.toLowerCase();
+        if (col === 'deaths') {
+          return numberWithCommas(row[col]);
+        }
+        return row[col];
+      },
     };
     return object;
   });
   return headers;
 };
+
 
 export { tableRows, tableColumns };
