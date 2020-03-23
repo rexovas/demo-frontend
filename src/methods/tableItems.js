@@ -1,6 +1,6 @@
 const tableRows = (data) => {
   if (!data) {
-    return null;
+    return [];
   }
   const rows = data.data;
   const { columns } = data;
@@ -20,7 +20,7 @@ const tableRows = (data) => {
 
 const tableColumns = (columns) => {
   if (!columns) {
-    return null;
+    return [];
   }
   const headers = columns.map((column) => {
     const object = {
