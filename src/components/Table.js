@@ -33,7 +33,7 @@ class Table extends Component {
   }
 
   render() {
-    const { loading, data } = this.state;
+    const { loading, data } = this.state; // eslint-disable-line no-unused-vars
 
     const rows = tableRows(data);
     const columns = tableColumns(data ? data.columns : null);
