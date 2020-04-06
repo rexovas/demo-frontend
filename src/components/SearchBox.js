@@ -10,7 +10,6 @@ import DropDown from './DropDown';
 
 
 const useAsyncHook = (searchStr = '', field) => {
-  console.log('FIELD', field);
   const [result, setResult] = useState([]);
   const [placeholder, setPlaceholder] = useState('');
 
