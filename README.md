@@ -6,7 +6,7 @@ This project is a basic React web application enabling users to interact with da
 
 This project requires a back-end API service to be running simultaneosly and accessible on localhost:5000 
 
-## Running the  app
+## Running the app locally
 
 In the project directory, you can run:
 
