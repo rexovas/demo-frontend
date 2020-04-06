@@ -1,20 +1,23 @@
 import React, { useCallback, useState, useEffect } from 'react';
+import '../css/components/SearchBox.css';
 import '@shopify/polaris/styles.css';
 import {
   Autocomplete, Stack, Tag, TextContainer,
 } from '@shopify/polaris';
 import { dataApi } from '../methods';
 import Table from './Table';
+import DropDown from './DropDown';
 
 
-const useAsyncHook = (searchStr = '') => {
+const useAsyncHook = (searchStr = '', field) => {
+  console.log('FIELD', field);
   const [result, setResult] = useState([]);
   const [placeholder, setPlaceholder] = useState('');
 
 
   useEffect(() => {
     async function getOptions() {
-      const data = await dataApi.getFilterList(searchStr);
+      const data = await dataApi.getFilterList(searchStr, field);
       setResult(data.result);
 
       if (data.result && data.result.length > 2) {
@@ -27,21 +30,23 @@ const useAsyncHook = (searchStr = '') => {
     }
 
     getOptions();
-  }, [searchStr]);
+  }, [searchStr, field]);
 
   return [result, placeholder];
 };
 
 const SearchBox = () => {
+  const [selectedField, setSelectedField] = useState('state'); // For Dropdown
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const [options, placeholder] = useAsyncHook(inputValue);
+  const [options, placeholder] = useAsyncHook(inputValue, selectedField);
 
   const updateText = useCallback(
     (value) => {
       setInputValue(value);
     },
-    [options], // eslint-disable-line
+    // [options], // eslint-disable-line
+    [],
   );
 
   const removeTag = useCallback(
@@ -55,7 +60,6 @@ const SearchBox = () => {
 
   const tagsMarkup = selectedOptions.map((value) => (
     <Tag key={value} onRemove={removeTag(value)}>
-      {/* {tagLabel} */}
       {value}
     </Tag>
   ));
@@ -63,29 +67,38 @@ const SearchBox = () => {
   const textField = (
     <Autocomplete.TextField
       onChange={updateText}
-      label="Filter by State/Cause Name"
       value={inputValue}
       placeholder={`e.g. ${placeholder}`}
     />
   );
 
+  const className = tagsMarkup.length === 0 ? 'search-box' : 'search-box-tags';
+
   return (
-    <div>
-      <div>
-        <TextContainer>
-          <Stack>{tagsMarkup}</Stack>
-        </TextContainer>
-        <br />
-        <Autocomplete
-          allowMultiple
-          options={options}
-          selected={selectedOptions}
-          textField={textField}
-          onSelect={setSelectedOptions}
-          listTitle="Search Suggestions"
-        />
+    <div className="search-table-wrapper shadow">
+      {tagsMarkup.length !== 0
+          && (
+          <div className="tags">
+            <TextContainer>
+              <Stack>{tagsMarkup}</Stack>
+            </TextContainer>
+            {/* <br /> */}
+          </div>
+          )}
+      <div className={className}>
+        <div style={{ paddingRight: '2px' }}><DropDown selected={selectedField} callback={setSelectedField} /></div>
+        <div style={{ flexBasis: '50vh' }}>
+          <Autocomplete
+            allowMultiple
+            options={options}
+            selected={selectedOptions}
+            textField={textField}
+            onSelect={setSelectedOptions}
+            listTitle="Search Suggestions"
+          />
+        </div>
       </div>
-      <div>
+      <div className="table-wrapper">
         <Table filterParams={selectedOptions} />
       </div>
     </div>

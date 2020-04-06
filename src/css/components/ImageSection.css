@@ -22,7 +22,7 @@
 }
 
 .slider-image {
-  background-image: url("https://crossix.com/wp-content/uploads/cache/2019/03/difa-laptop_1920x517_2-1920x517-cropped.jpg");
+  background-image: url(../../assets/laptop.jpg);
   color: rgb(0, 61, 113);
   width: 100%; 
   transition-duration: 0ms; 
@@ -42,13 +42,15 @@
   font-weight: 700;
   font-size: 42px;
   /* font-size: 3vh; */
-  padding: 70px 0 0 12px;
+  /* padding: 70px 0 0 12px; */
+  padding: 70px 0 0 0;
   /* display: block; */
   -webkit-box-direction: normal;
 }
 
 .image-text {
-  padding: 10px 0 0 12px;
+  /* padding: 10px 0 0 12px; */
+  padding: 10px 0 0 0; 
   font-size: 20px;
   font-weight: 400;
   /* line-height: 1.22; */
@@ -57,13 +59,49 @@
   margin-bottom: 20px;
 }
 
-.image-link {
+/* .image-link {
   padding: 10px 0 0 12px;
-}
+} */
+
+.btn, .btn:hover {
+  /* background: #f8981d; */
+  background-color: #dd606d;
+  /* background: #003d71; */
+  /* color: #ffffff; */
+    /* background-color: white; */
+    /* color: #dd606d; */
+    /* border: 2px solid #dd606d; */
+    /* border-color: #dd606d; */
+  }
+  .btn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 27px;
+    line-height: 23px;
+    -webkit-transition: background .3s,color .3s;
+    -o-transition: background .3s,color .3s;
+    transition: background .3s,color .3s;
+  }
+  
+  .btn--red {
+    background-color: #003d71;
+    color: white;
+    /* background-color: #dd606d; */
+  }
 
 @media (max-width: 850px) {
      .slider-image, .image-header {
-      background-image: url(https://crossix.com/wp-content/themes/crossix/resources/images/temp/placeholder-bg.png);
+      background-image: url(../../assets/placeholder-bg.png);
       /* padding: 20px; */
       /* padding: 20px 0 0 15px; */
       padding: 20px 0 0 5px;
@@ -103,7 +141,7 @@
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) {
     .slider-image, .image-header {
-      background-image: url(https://crossix.com/wp-content/themes/crossix/resources/images/temp/placeholder-bg.png);
+      background-image: url(../../assets/placeholder-bg.png);
       /* padding: 20px; */
       /* padding: 20px 0 0 15px; */
       padding: 20px 0 0 5px;
@@ -128,18 +166,21 @@
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
+    .section-slider {
+      min-height: 320px;
+    }
     .slider-image, .image-header {
       background-position: 50%;
       padding-top: 20px;
-      font-size: 26px
+      font-size: 26px;
     }
     
     .image-text {
       margin-right: 150px;
     }
 
-    .image-link {
+    /* .image-link {
       font-size: 15px;
-    }
+    } */
 
 }

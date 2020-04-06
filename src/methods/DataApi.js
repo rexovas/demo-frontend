@@ -17,8 +17,8 @@ export default class DataApi {
     return data;
   }
 
-  getFilterList = async (str) => {
-    const query = str ? `?search=${str}` : '';
+  getFilterList = async (str, field) => {
+    const query = str ? `?field=${field}&search=${str}` : `?field=${field}`;
     const list = await this.requestService.get(`/filter-list${query}`);
     return list;
   }

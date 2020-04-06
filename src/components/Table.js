@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DataTable from 'react-data-table-component';
 import { dataApi, tableRows, tableColumns } from '../methods';
 import '../css/components/Table.css';
+import PropTypes from 'prop-types';
 
 class Table extends Component {
   constructor(props) {
@@ -38,18 +39,31 @@ class Table extends Component {
     const rows = tableRows(data);
     const columns = tableColumns(data ? data.columns : null);
 
+    // const customStyles = {
+    //   rows: {
+    //     style: {
+    //     },
+    //   },
+    // };
+
     return (
       <DataTable
         className="table"
         highlightOnHover
+        noHeader
         paginationPerPage={15}
         pagination
         columns={columns}
         data={rows}
         sortable
+        // customStyles={customStyles}
       />
     );
   }
 }
+
+Table.propTypes = {
+  filterParams: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Table;
