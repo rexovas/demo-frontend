@@ -27,13 +27,21 @@ const tableColumns = (columns) => {
     return [];
   }
   const headers = columns.map((column) => {
+    const col = column.toLowerCase();
+    const right = (col === 'deaths' || col === 'age-adjusted death rate');
     const object = {
       name: column,
       selector: column.toLowerCase(),
       sortable: true,
       wrap: true,
+      right,
+      grow: () => {
+        if (col === '113 cause name') {
+          return 3;
+        }
+        return 1;
+      },
       format: (row) => {
-        const col = column.toLowerCase();
         if (col === 'deaths') {
           return numberWithCommas(row[col]);
         }

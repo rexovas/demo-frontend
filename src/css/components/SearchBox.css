@@ -1,0 +1,88 @@
+.search-table-wrapper {
+  background-color: #ffffff;
+  /* margin: 5vh; */
+  /* position: relative; */
+  /* height: 127vh; */
+}
+
+.search-box {
+  /* padding: 5vh 5vh 1px 5vh; */
+  /* padding: 5vh 0 0 0; */
+  padding: 5vh 5vh 0 5vh;
+  display: flex;
+  justify-content: left;
+}
+
+.search-box-tags {
+  padding: 0 5vh;
+  /* padding: 0; */
+  display: flex;
+  justify-content: left;
+}
+
+.tags {
+  padding: 3vh 5vh 2vh 5vh;
+  /* padding: 3vh 0 2vh 0; */
+  display: flex;
+  justify-content: left;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+}
+
+.table-wrapper {
+  display: block;
+  margin: 0 5vh 5vh 5vh; /* margin bottom not working */
+  /* margin-bottom: 5vh; */
+}
+
+/* ---- iPhone X ---- */
+
+/* Portrait and Landscape */
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .slider-image {
+      background-position: 50%;
+    } 
+
+} */
+
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  /* and (orientation: portrait) { */
+  {
+    .shadow {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+   .table-wrapper {
+     margin: 0;
+   }
+   .search-box, .search-box-tags {
+     padding: 0;
+   }
+   .tags {
+     padding: 0 0 2vh 0;
+   }
+
+}
+
+/* Landscape */
+/* @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    .shadow {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+} */
