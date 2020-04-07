@@ -6,7 +6,7 @@ const ImageSection = () => (
     <div className="slider-image">
       <div className="shell">
 
-        <h1 className="image-header">Interactive Dataset</h1>
+        <h1 className="image-header">Demo Application</h1>
         <p className="image-text">
           This dataset presents the age-adjusted death rates for the 10 leading causes
           of death in the United States beginning in 1999. Data are based on information
