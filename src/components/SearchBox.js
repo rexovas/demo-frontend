@@ -85,7 +85,9 @@ const SearchBox = () => {
           </div>
           )}
       <div className={className}>
-        <div style={{ paddingRight: '2px' }}><DropDown selected={selectedField} callback={setSelectedField} /></div>
+        <div style={{ paddingRight: '2px' }}>
+          <DropDown selected={selectedField} callback={setSelectedField} />
+        </div>
         <div style={{ flexBasis: '50vh' }}>
           <Autocomplete
             allowMultiple
