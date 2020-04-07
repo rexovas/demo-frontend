@@ -1,5 +1,7 @@
 .search-table-wrapper {
   background-color: #ffffff;
+  display: inline-block;
+  width: 100%;
   /* margin: 5vh; */
   /* position: relative; */
   /* height: 127vh; */
