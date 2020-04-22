@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "https://rexovas.github.io/demo-frontend/static/css/main.f91b466d.chunk.css",
+    "main.js": "https://rexovas.github.io/demo-frontend/static/js/main.2b1011ab.chunk.js",
+    "main.js.map": "https://rexovas.github.io/demo-frontend/static/js/main.2b1011ab.chunk.js.map",
+    "runtime-main.js": "https://rexovas.github.io/demo-frontend/static/js/runtime-main.3aeaeb09.js",
+    "runtime-main.js.map": "https://rexovas.github.io/demo-frontend/static/js/runtime-main.3aeaeb09.js.map",
+    "static/css/2.bb4d6dbb.chunk.css": "https://rexovas.github.io/demo-frontend/static/css/2.bb4d6dbb.chunk.css",
+    "static/js/2.b87033ce.chunk.js": "https://rexovas.github.io/demo-frontend/static/js/2.b87033ce.chunk.js",
+    "static/js/2.b87033ce.chunk.js.map": "https://rexovas.github.io/demo-frontend/static/js/2.b87033ce.chunk.js.map",
+    "index.html": "https://rexovas.github.io/demo-frontend/index.html",
+    "precache-manifest.47401f9f52c325ef3efe2fea5b702fd6.js": "https://rexovas.github.io/demo-frontend/precache-manifest.47401f9f52c325ef3efe2fea5b702fd6.js",
+    "service-worker.js": "https://rexovas.github.io/demo-frontend/service-worker.js",
+    "static/css/2.bb4d6dbb.chunk.css.map": "https://rexovas.github.io/demo-frontend/static/css/2.bb4d6dbb.chunk.css.map",
+    "static/css/main.f91b466d.chunk.css.map": "https://rexovas.github.io/demo-frontend/static/css/main.f91b466d.chunk.css.map",
+    "static/js/2.b87033ce.chunk.js.LICENSE.txt": "https://rexovas.github.io/demo-frontend/static/js/2.b87033ce.chunk.js.LICENSE.txt",
+    "static/media/ImageSection.css": "https://rexovas.github.io/demo-frontend/static/media/laptop.be1db7d9.jpg",
+    "static/media/logo-white.svg": "https://rexovas.github.io/demo-frontend/static/media/logo-white.a0e5d9e9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3aeaeb09.js",
+    "static/css/2.bb4d6dbb.chunk.css",
+    "static/js/2.b87033ce.chunk.js",
+    "static/css/main.f91b466d.chunk.css",
+    "static/js/main.2b1011ab.chunk.js"
+  ]
+}
